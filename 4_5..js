@@ -1,5 +1,6 @@
 console.log(score);
 
-score = 80;
 var score;
+score = 80;
+
 console.log(score);
