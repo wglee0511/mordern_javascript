@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./39.css">
+  <style>
+    .jimin { color: pink }
+    .minjung { color: blue }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <ul id="aespa">
+    <li class="jimin minjung">jimin</li>
+  </ul>
+  <input type="text" id="input">
+  <script>
+    const aespaElement = document.getElementById("aespa")
+    const jiminElement = document.querySelector(".jimin")
+    const fragment = document.createDocumentFragment()
+
+    const nameArray = ["jimin", "minjung"]
+
+    nameArray.forEach(name => {
+      const liElement = document.createElement("li")
+      liElement.textContent = name
+      fragment.appendChild(liElement)
+    })
+
+    aespaElement.appendChild(fragment)
+
+    jiminElement.classList.add("jimin")
+    jiminElement.classList.remove("minjung")
+    console.log(jiminElement.classList.item(0));
+    console.log(jiminElement.classList.contains("jimin"));
+    jiminElement.classList.replace("jimin", "minjung")
+    jiminElement.classList.toggle("jimin")
+  </script>
+</body>
+</html>
